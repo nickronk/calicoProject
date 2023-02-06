@@ -22,7 +22,6 @@ public class TimerScript : MonoBehaviour
     int timerStatus;
     float originT1, originT2;
 
-    // Start is called before the first frame update
     void Start()
     {
         textforNewTaskButton.text = "Add Task 1";
@@ -36,6 +35,9 @@ public class TimerScript : MonoBehaviour
             timerSet = true;
             theTime = PlayerPrefs.GetFloat("FirstTimer");
             newTaskState = 2;
+            sl1.gameObject.SetActive(true);
+            img1.gameObject.SetActive(true);
+            objective = PlayerPrefs.GetString("Ob1");
         }
 
         if (PlayerPrefs.GetFloat("SecondTimer") > 0)
@@ -43,10 +45,12 @@ public class TimerScript : MonoBehaviour
             timerSet2 = true;
             theTime2 = PlayerPrefs.GetFloat("SecondTimer");
             newTaskState2 = 2;
+            img2.gameObject.SetActive(true);
+            sl2.gameObject.SetActive(true);
+            objective2 = PlayerPrefs.GetString("Ob2");
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -97,7 +101,8 @@ public class TimerScript : MonoBehaviour
         else
         {
             sl1.gameObject.SetActive(false);
-
+            PlayerPrefs.DeleteKey("Ob1");
+            PlayerPrefs.DeleteKey("FirstTimer");
             textfortimer.text = "00:00";
             textforlower.text = "There is no timer set.";
         }
@@ -129,7 +134,8 @@ public class TimerScript : MonoBehaviour
         else
         {
             sl2.gameObject.SetActive(false);
-
+            PlayerPrefs.DeleteKey("Ob2");
+            PlayerPrefs.DeleteKey("SecondTimer");
             textfortimer2.text = "00:00";
             textforlower2.text = "There is no timer set.";
         }
@@ -359,10 +365,11 @@ public class TimerScript : MonoBehaviour
         if (timerSet == true)
         {
             PlayerPrefs.SetFloat("FirstTimer", theTime);
-           
+            PlayerPrefs.SetString("Ob1", objective);
         }
         if (timerSet2 == true)
         {
+            PlayerPrefs.SetString("Ob2", objective2);
             PlayerPrefs.SetFloat("SecondTimer", theTime2);
         }
 
@@ -374,6 +381,20 @@ public class TimerScript : MonoBehaviour
         if (where=="shop")
         {
             SceneManager.LoadScene(1);
+        }
+    }
+
+    private void OnApplicationQuit()
+    {
+        if (timerSet == true)
+        {
+            PlayerPrefs.SetFloat("FirstTimer", theTime);
+            PlayerPrefs.SetString("Ob1", objective);
+        }
+        if (timerSet2 == true)
+        {
+            PlayerPrefs.SetString("Ob2", objective2);
+            PlayerPrefs.SetFloat("SecondTimer", theTime2);
         }
     }
 }

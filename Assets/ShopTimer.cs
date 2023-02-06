@@ -57,4 +57,17 @@ public class ShopTimer : MonoBehaviour
         }
 
     }
+
+    private void OnApplicationQuit()
+    {
+        if (t1set == true)
+        {
+            PlayerPrefs.SetFloat("FirstTimer", timer1);
+
+        }
+        if (t2set == true)
+        {
+            PlayerPrefs.SetFloat("SecondTimer", timer2);
+        }
+    }
 }
