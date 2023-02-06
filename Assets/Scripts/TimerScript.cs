@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
 
 public class TimerScript : MonoBehaviour
 {
@@ -29,6 +30,20 @@ public class TimerScript : MonoBehaviour
         newTaskState2 = 0;
         sl1.gameObject.SetActive(false);
         sl2.gameObject.SetActive(false);
+
+        if (PlayerPrefs.GetFloat("FirstTimer")>0)
+        {
+            timerSet = true;
+            theTime = PlayerPrefs.GetFloat("FirstTimer");
+            newTaskState = 2;
+        }
+
+        if (PlayerPrefs.GetFloat("SecondTimer") > 0)
+        {
+            timerSet2 = true;
+            theTime2 = PlayerPrefs.GetFloat("SecondTimer");
+            newTaskState2 = 2;
+        }
     }
 
     // Update is called once per frame
@@ -336,6 +351,29 @@ public class TimerScript : MonoBehaviour
             howLong.text = "For how long?";
             completeTask2.SetActive(false);
             newTaskState2 = 0;
+        }
+    }
+
+    public void OnSceneExit(string where)
+    {
+        if (timerSet == true)
+        {
+            PlayerPrefs.SetFloat("FirstTimer", theTime);
+           
+        }
+        if (timerSet2 == true)
+        {
+            PlayerPrefs.SetFloat("SecondTimer", theTime2);
+        }
+
+        if (where == "timer")
+        {
+            SceneManager.LoadScene(0);
+        }
+
+        if (where=="shop")
+        {
+            SceneManager.LoadScene(1);
         }
     }
 }
