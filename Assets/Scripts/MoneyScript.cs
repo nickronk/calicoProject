@@ -12,7 +12,7 @@ public class MoneyScript : MonoBehaviour
     void Start()
     {
         textM = GetComponent<TextMeshProUGUI>();
-        textM.text = "$" + PlayerPrefs.GetFloat("money");
+        textM.text = "$" + PlayerPrefs.GetFloat("Money");
     }
 
     // Update is called once per frame
@@ -25,6 +25,6 @@ public class MoneyScript : MonoBehaviour
     {
         money += cash;
         textM.text = "$"+ money.ToString();
-        PlayerPrefs.SetFloat("money", money);
+        PlayerPrefs.SetFloat("Money", money);
     }
 }

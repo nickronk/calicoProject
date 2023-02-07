@@ -2,15 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
+using System;
 
 public class ShopTimer : MonoBehaviour
 {
 
     float timer1, timer2;
     bool t1set, t2set;
+    string ob1, ob2;
+    public TextMeshProUGUI leftsideText;
+    public PurchaseScript purchaseScript;
+
     // Start is called before the first frame update
     void Start()
     {
+        ob1 = PlayerPrefs.GetString("Ob1");
+        ob2 = PlayerPrefs.GetString("Ob2");
         t2set = false;
         t1set = false;
         if (PlayerPrefs.GetFloat("FirstTimer") > 0)
@@ -31,11 +39,29 @@ public class ShopTimer : MonoBehaviour
     {
         if (t1set==true)
         {
-            timer1 -= Time.deltaTime;
+            if (timer1 < 10)
+            {
+                leftsideText.text = ob1 + " completed.";
+            }
+            else
+            {
+                timer1 -= Time.deltaTime;
+                TimeSpan time1 = TimeSpan.FromSeconds(timer1);
+                leftsideText.text = ob1 + ": " + time1.ToString("hh':'mm':'ss");
+            }
         }
         if (t2set == true)
         {
-            timer2 -= Time.deltaTime;
+            if (timer2 < 10)
+            {
+                leftsideText.text = leftsideText.text + "\n" + ob2 + " completed.";
+            }
+            else
+            {
+                timer2 -= Time.deltaTime;
+                TimeSpan time2 = TimeSpan.FromSeconds(timer2);
+                leftsideText.text = leftsideText.text + "\n" + ob2 + ": " + time2.ToString("hh':'mm':'ss");
+            }
         }
     }
 
@@ -50,6 +76,8 @@ public class ShopTimer : MonoBehaviour
         {
             PlayerPrefs.SetFloat("SecondTimer", timer2);
         }
+
+        purchaseScript.SaveAll();
 
         if (where == "timer")
         {
@@ -69,5 +97,8 @@ public class ShopTimer : MonoBehaviour
         {
             PlayerPrefs.SetFloat("SecondTimer", timer2);
         }
+
     }
+
+    
 }

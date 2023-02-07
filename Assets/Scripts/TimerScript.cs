@@ -155,7 +155,7 @@ public class TimerScript : MonoBehaviour
                 if (newTaskState == 0)
                 {
                     objective = "";
-                    textfortimer.text = "00:00";
+                    textfortimer.text = "";
                     sl1.gameObject.SetActive(false);
 
                     textforlower.text = "There is no timer set.";
@@ -191,7 +191,7 @@ public class TimerScript : MonoBehaviour
                     sl2.gameObject.SetActive(false);
 
                     objective = "";
-                    textfortimer2.text = "00:00";
+                    textfortimer2.text = "";
                     textforlower2.text = "There is no timer set.";
                 }
             }
@@ -232,7 +232,7 @@ public class TimerScript : MonoBehaviour
     {
         if (hourAmt.text == "" && minAmt.text == "" || ((hourAmt.text == "0" || hourAmt.text == "00") && (minAmt.text == "0" || minAmt.text == "00")))
         {
-            howLong.text = "Please insert a valid time.";
+            howLong.text = "Insert a valid time.";
             return;
         }
         else if (hourAmt.text=="")
@@ -259,6 +259,7 @@ public class TimerScript : MonoBehaviour
             newTaskPanelTime.SetActive(false);
             textforlower.text = objective;
             originT1 = theTime;
+            PlayerPrefs.SetFloat("FirstOrigin", originT1);
             timerSet = true;
             newTaskState = 0;
             textforNewTaskButton.text = "Add Task 1";
@@ -283,6 +284,7 @@ public class TimerScript : MonoBehaviour
             newTaskState2 = 0;
             textforNewTaskButton2.text = "Add Task 2";
             originT2 = theTime2;
+            PlayerPrefs.SetFloat("SecondOrigin", originT2);
             sl2.minValue = 0;
             sl2.maxValue = theTime2;
             sl2.gameObject.SetActive(true);
@@ -297,12 +299,14 @@ public class TimerScript : MonoBehaviour
         {
             sl1.gameObject.SetActive(false);
             ResetTask(1);
+            originT1 = PlayerPrefs.GetFloat("FirstOrigin");
             cashObj.GetComponent<MoneyScript>().AddMoney(originT1);
         } 
         else if (numb==2)
         {
             sl2.gameObject.SetActive(false);
             ResetTask(2);
+            originT2 = PlayerPrefs.GetFloat("SecondOrigin");
             cashObj.GetComponent<MoneyScript>().AddMoney(originT2);
 
         }
