@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CatnipScript : MonoBehaviour
 {
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +31,7 @@ public class CatnipScript : MonoBehaviour
 
         if (randomChance<4)
         {
-            //rare
+            
         }
         else if (randomChance<25)
         {

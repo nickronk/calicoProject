@@ -14,13 +14,14 @@ public class TimerScript : MonoBehaviour
     public string objective,objective2;
     //used by other scripts
     public TextMeshProUGUI howLong,textfortimer, textforlower, textfortimer2, textforlower2, textforNewTaskButton,textforNewTaskButton2;
-    public GameObject newTaskPanel,newTaskPanelTime,completeTask1,completeTask2,img1,img2,secondTaskButton,cashObj;
+    public GameObject newTaskPanel,newTaskPanelTime,completeTask1,completeTask2,img1,img2,firstTaskButton,secondTaskButton,cashObj;
     public int newTaskState,newTaskState2;
     public TMP_InputField newTaskName,hourAmt,minAmt;
     public Slider sl1, sl2;
 
     int timerStatus;
     float originT1, originT2;
+    public GameObject shopButton;
 
     void Start()
     {
@@ -54,6 +55,19 @@ public class TimerScript : MonoBehaviour
     void Update()
     {
         
+        if (completeTask1.activeSelf==false && completeTask2.activeSelf == false)
+        {
+            shopButton.SetActive(true);
+            firstTaskButton.SetActive(true);
+            secondTaskButton.SetActive(true);
+        }
+        else
+        {
+            shopButton.SetActive(false);
+            firstTaskButton.SetActive(false);
+            secondTaskButton.SetActive(false);
+        }
+
         if (timerSet&&!timerSet2)
         {
             timerStatus = 1;
@@ -382,7 +396,7 @@ public class TimerScript : MonoBehaviour
             SceneManager.LoadScene(0);
         }
 
-        if (where=="shop")
+        if (where == "shop")
         {
             SceneManager.LoadScene(1);
         }
