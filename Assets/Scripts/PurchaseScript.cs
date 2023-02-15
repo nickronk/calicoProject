@@ -1,17 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PurchaseScript : MonoBehaviour
 {
 
     float cash;
     int nip1, nip2, nip3;
+    public TextMeshProUGUI rightsideText;
 
     void Start()
     {
+
         cash = PlayerPrefs.GetFloat("Money");
+        SetText();
     }
+
 
     // Update is called once per frame
     public void Sale(float code)
@@ -47,13 +52,17 @@ public class PurchaseScript : MonoBehaviour
                 PlayerPrefs.SetInt("N3", nip3);
             }
         }
-
-
+        SetText();
         
     }
     private void OnApplicationQuit()
     {
         SaveAll();
+    }
+
+    void SetText()
+    {
+        rightsideText.text = "$" + cash + " \n " + nip1 + " Nip " + "\n" + nip2 + " Super Nip" + "\n" + nip3 + " Uber Nip";
     }
 
     public void SaveAll()
