@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using System;
+using System.Timers;
 
 public class ShopTimer : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class ShopTimer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 100;
         ob1 = PlayerPrefs.GetString("Ob1");
         ob2 = PlayerPrefs.GetString("Ob2");
         t2set = false;

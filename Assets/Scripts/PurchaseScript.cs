@@ -12,16 +12,27 @@ public class PurchaseScript : MonoBehaviour
 
     void Start()
     {
-
+        nip1 = PlayerPrefs.GetInt("N1");
+        nip2 = PlayerPrefs.GetInt("N2");
+        nip3 = PlayerPrefs.GetInt("N3");
         cash = PlayerPrefs.GetFloat("Money");
         SetText();
+
     }
 
-
+    public void Update()
+    {
+        Debug.Log(nip2);
+    }
     // Update is called once per frame
     public void Sale(float code)
         //1 = nip
     {
+
+        nip1=PlayerPrefs.GetInt("N1");
+        nip2=PlayerPrefs.GetInt("N2");
+        nip3=PlayerPrefs.GetInt("N3");
+
         if (code==1)
         {
             if (cash>10)

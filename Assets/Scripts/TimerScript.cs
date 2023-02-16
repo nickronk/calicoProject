@@ -39,6 +39,7 @@ public class TimerScript : MonoBehaviour
             sl1.gameObject.SetActive(true);
             img1.gameObject.SetActive(true);
             objective = PlayerPrefs.GetString("Ob1");
+            sl1.maxValue = PlayerPrefs.GetFloat("FirstOrigin");
         }
 
         if (PlayerPrefs.GetFloat("SecondTimer") > 0)
@@ -49,6 +50,7 @@ public class TimerScript : MonoBehaviour
             img2.gameObject.SetActive(true);
             sl2.gameObject.SetActive(true);
             objective2 = PlayerPrefs.GetString("Ob2");
+            sl2.maxValue = PlayerPrefs.GetFloat("SecondOrigin");
         }
     }
 
@@ -86,7 +88,7 @@ public class TimerScript : MonoBehaviour
             secondTaskButton.SetActive(false);
 
         }
-        Debug.Log(newTaskName.text);
+
         ///TIMER 1
         ///
         if (timerSet==true)
@@ -399,6 +401,10 @@ public class TimerScript : MonoBehaviour
         if (where == "shop")
         {
             SceneManager.LoadScene(1);
+        }
+        if (where == "gallery")
+        {
+            SceneManager.LoadScene(2);
         }
     }
 
