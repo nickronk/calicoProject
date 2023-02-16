@@ -10,7 +10,7 @@ public class CatnipScript : MonoBehaviour
     public TMP_Dropdown catnipDropdown, catplaceDropDropdown;
     public Sprite[] spritelist;
     int catRarity;
-
+    public SaveScript sveScrpt;
     private void Update()
     {
         Debug.Log(catplaceDropDropdown.value);
@@ -143,10 +143,7 @@ public class CatnipScript : MonoBehaviour
             bedCT.sprite = spritelist[catnumber];
         }
 
-
-        //hell script. if number then unlock
-
-        if (catnumber==1)
-        { }
+        
+        
     }
 }

@@ -2132,6 +2132,7 @@ GameObject:
   - component: {fileID: 562047531}
   - component: {fileID: 562047530}
   - component: {fileID: 562047532}
+  - component: {fileID: 562047533}
   m_Layer: 0
   m_Name: CodeObject
   m_TagString: Untagged
@@ -2212,6 +2213,18 @@ MonoBehaviour:
   hrF: {fileID: 941384093}
   mnF: {fileID: 1810516053}
   inputNum: 0
+--- !u!114 &562047533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562047529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91409382c6b8344c6880404c9618682d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &573685283
 GameObject:
   m_ObjectHideFlags: 0
@@ -5170,6 +5183,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0ab9e2cec30904c8992275d2606bc06f, type: 3}
   - {fileID: 21300000, guid: 0ab9e2cec30904c8992275d2606bc06f, type: 3}
   - {fileID: 21300000, guid: 0ab9e2cec30904c8992275d2606bc06f, type: 3}
+  sveScrpt: {fileID: 562047533}
 --- !u!1 &1073702500
 GameObject:
   m_ObjectHideFlags: 0
