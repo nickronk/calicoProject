@@ -1576,7 +1576,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 391217091}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -2182,6 +2182,7 @@ MonoBehaviour:
   sl1: {fileID: 386908082}
   sl2: {fileID: 1569143264}
   shopButton: {fileID: 1745395302}
+  galButton: {fileID: 333897684}
 --- !u!4 &562047531
 Transform:
   m_ObjectHideFlags: 0
@@ -3642,7 +3643,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 768317565}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -5137,6 +5138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1af8de9b9c75646ee86ce57bb025361f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mclVisible: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   yarnBG: {fileID: 963074837}
   yarnCT: {fileID: 391217093}
   bedBG: {fileID: 1209940511}
@@ -8031,7 +8033,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1698112847}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 

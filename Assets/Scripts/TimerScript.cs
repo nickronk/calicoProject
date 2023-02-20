@@ -21,7 +21,7 @@ public class TimerScript : MonoBehaviour
 
     int timerStatus;
     float originT1, originT2;
-    public GameObject shopButton;
+    public GameObject shopButton,galButton;
 
     void Start()
     {
@@ -62,10 +62,13 @@ public class TimerScript : MonoBehaviour
             shopButton.SetActive(true);
             firstTaskButton.SetActive(true);
             secondTaskButton.SetActive(true);
+            galButton.SetActive(true);
+
         }
         else
         {
             shopButton.SetActive(false);
+            galButton.SetActive(false);
             firstTaskButton.SetActive(false);
             secondTaskButton.SetActive(false);
         }

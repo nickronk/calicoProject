@@ -16,8 +16,4 @@ public class SaveScript : MonoBehaviour
         
     }
 
-    public void SaveNumber(int catnum)
-    {
-
-    }
 }

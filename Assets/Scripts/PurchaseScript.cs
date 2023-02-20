@@ -35,7 +35,7 @@ public class PurchaseScript : MonoBehaviour
 
         if (code==1)
         {
-            if (cash>10)
+            if (cash>=10)
             {
                 cash = cash - 10;
                 PlayerPrefs.SetFloat("Money",cash);
@@ -45,7 +45,7 @@ public class PurchaseScript : MonoBehaviour
         }
         if (code == 2)
         {
-            if (cash > 100)
+            if (cash >= 100)
             {
                 cash = cash - 100;
                 PlayerPrefs.SetFloat("Money", cash);
@@ -55,7 +55,7 @@ public class PurchaseScript : MonoBehaviour
         }
         if (code == 3)
         {
-            if (cash > 250)
+            if (cash >= 250)
             {
                 cash = cash - 250;
                 PlayerPrefs.SetFloat("Money", cash);
