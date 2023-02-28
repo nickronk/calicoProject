@@ -11,6 +11,7 @@ public class MoneyScript : MonoBehaviour
 
     void Start()
     {
+        money = PlayerPrefs.GetFloat("Money");
         textM = GetComponent<TextMeshProUGUI>();
         textM.text = "$" + PlayerPrefs.GetFloat("Money");
     }

@@ -254,6 +254,11 @@ public class TimerScript : MonoBehaviour
             howLong.text = "Insert a valid time.";
             return;
         }
+        else if (newTaskName.text == "")
+        {
+            howLong.text = "Insert a valid objective.";
+            return;
+        }
         else if (hourAmt.text=="")
         {
             hourAmt.text = "0";

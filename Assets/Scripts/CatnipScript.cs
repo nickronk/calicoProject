@@ -16,7 +16,7 @@ public class CatnipScript : MonoBehaviour
     public SaveScript sveScrpt;
     public static float at1, at2, at3;
     Button currentButton;
-
+    public TextMeshProUGUI statusText, amountText;
     private void Start()
     {
         currentButton = GetComponent<Button>();
