@@ -16,7 +16,7 @@ public class CatnipScript : MonoBehaviour
     public SaveScript sveScrpt;
     public static float at1, at2, at3;
     Button currentButton;
-    public TextMeshProUGUI statusText, amountText;
+    public TextMeshProUGUI statusText, amountText,hypeText;
     private void Start()
     {
         currentButton = GetComponent<Button>();
@@ -76,19 +76,19 @@ public class CatnipScript : MonoBehaviour
 
         if (PlayerPrefs.GetInt("N1") == 0 && nipNum == 1)
         {
-            Debug.Log("No Catnip Available of this type");
+            hypeText.text="No Catnip Available of this type";
             return;
 
         }
         if (PlayerPrefs.GetInt("N2") == 0 && nipNum == 2)
         {
-            Debug.Log("No Catnip Available of this type");
+            hypeText.text = "No Catnip Available of this type"; 
             return;
 
         }
         if (PlayerPrefs.GetInt("N3") == 0 && nipNum == 3)
         {
-            Debug.Log("No Catnip Available of this type");
+            hypeText.text = "No Catnip Available of this type"; 
             return;
         }
 

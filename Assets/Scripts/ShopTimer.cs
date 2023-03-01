@@ -62,7 +62,13 @@ public class ShopTimer : MonoBehaviour
             {
                 timer2 -= Time.deltaTime;
                 TimeSpan time2 = TimeSpan.FromSeconds(timer2);
-                leftsideText.text = leftsideText.text + "\n" + ob2 + ": " + time2.ToString("hh':'mm':'ss");
+                if (timer1>10 && t1set)
+                    leftsideText.text = leftsideText.text + "\n" + ob2 + ": " + time2.ToString("hh':'mm':'ss");
+                else if (t1set)
+                    leftsideText.text = ob1 + " completed." + "\n" + ob2 + ": " + time2.ToString("hh':'mm':'ss");
+                else
+                    leftsideText.text = ob2 + ": " + time2.ToString("hh':'mm':'ss");
+
             }
         }
     }
